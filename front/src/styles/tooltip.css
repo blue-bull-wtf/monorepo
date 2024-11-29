@@ -1,0 +1,87 @@
+
+/* Base Tooltip */
+.tooltip {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, var(--unit-1));
+    z-index: 101;
+    /* background: var(--bg-0); */
+    backdrop-filter: blur(.2rem); -webkit-backdrop-filter: blur(.2rem);
+    /* @extend .rounded, .weight-body; Assuming these are globally defined */
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--fg-1);
+    content: attr(data-tooltip);
+    display: block;
+    font-size: var(--font-size-xs);
+    line-height: var(--font-size-s);
+    font-weight: 400;
+    max-width: var(--mms);
+    opacity: 0;
+    overflow: hidden;
+    padding: var(--unit-1) var(--unit-2);
+    pointer-events: none;
+    text-overflow: ellipsis;
+    transition: opacity .2s, transform .2s;
+    white-space: nowrap; /* Changed from pre to nowrap to handle overflow */
+  }
+
+  &[disabled], &.disabled {
+    pointer-events: auto;
+  }
+
+  &:focus::after, &:hover::after {
+    opacity: 1;
+  }
+
+  /* Right Tooltip */
+  &.right {
+    &::after {
+      bottom: 50%;
+      left: 100%;
+      transform: translate(-var(--unit-1), 50%);
+    }
+    &:focus::after, &:hover::after {
+      transform: translate(var(--unit-1), 50%);
+    }
+  }
+
+  /* Left Tooltip */
+  &.left {
+    &::after {
+      bottom: 50%;
+      left: auto;
+      right: 100%;
+      transform: translate(var(--unit-1), 50%);
+    }
+    &:focus::after, &:hover::after {
+      transform: translate(-var(--unit-1), 50%);
+    }
+  }
+
+  /* Top Tooltip */
+  &.top::after {
+    left: 50%;
+    bottom: 100%;
+    top: auto;
+    transform: translate(-50%, var(--unit-1));
+    &:focus::after, &:hover::after {
+      opacity: 1;
+      transform: translate(-50%, -var(--unit-1));
+    }
+  }
+
+  /* Bottom Tooltip */
+  &.bot::after {
+    bottom: auto;
+    top: 100%;
+    transform: translate(-50%, -var(--unit-1));
+    &:focus::after, &:hover::after {
+      transform: translate(-50%, var(--unit-1));
+    }
+  }
+
+}

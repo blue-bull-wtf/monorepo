@@ -1,0 +1,130 @@
+:root {
+  /* Unit sizing */
+  --unit-o: 0.075rem;
+  --unit-h: 0.1rem;
+  --unit-1: 0.25rem;
+  --unit-2: 0.5rem;
+  --unit-3: 0.75rem;
+  --unit-4: 1rem;
+  --unit-5: 1.3rem;
+  --unit-6: 1.7rem;
+  --unit-7: 2.2rem;
+  --unit-8: 2.8rem;
+  --unit-9: 3.6rem;
+  --unit-10: 4.6rem;
+  --unit-11: 5.8rem;
+  --unit-12: 7rem;
+  --unit-13: 8.4rem;
+  --unit-14: 10rem;
+
+  /* Extended spacing */
+  --xxxxs: 2rem;
+  --xxxs: 3rem;
+  --xxs: 4rem;
+  --xs: 8rem;
+  --s: 12rem;
+  --ssm: 14rem;
+  --sm: 16rem;
+  --smm: 18rem;
+  --mss: 20rem;
+  --ms: 21rem;
+  --mms: 24rem;
+  --mmms: 28rem;
+  --m: 30rem;
+  --ml: 36rem;
+  --lm: 42rem;
+  --l: 50rem;
+  --xl: 58rem;
+  --xxl: 70rem;
+  --xxxl: 84rem;
+
+  /* Theme colors */
+  --blue-black: #061834;
+  --darker-blue: #091747;
+  --dark-blue: #071765;
+  --royal-blue: #0b2eac;
+  --electric-blue: #1543D8;
+  --blue: #477bff;
+  --light-blue: #afcaff;
+
+  /* Theme aliases */
+  --primary: var(--blue);
+  --secondary: var(--light-blue);
+  --tertiary: var(--royal-blue);
+  --active: var(--secondary);
+
+  /* B&W shades */
+  --darker: #0c0c0c;
+  --dark: #2a2a2a;
+  --darker-grey: #323232;
+  --dark-grey: #505050;
+  --grey: #8f8f8f;
+  --light-grey: #c8c8c8;
+  --lighter-grey: #ececec;
+  --light: #fbf8f4;
+  --lighter: #fdfdfd;
+
+  /* Shades aliases */
+  --black: var(--darker);
+  --white: var(--lighter);
+
+  /* Sentiment colors */
+  --green: #00cc7a;
+  --orange: #f8b024;
+  --red: #ff4242;
+  --brown: #855d2d;
+
+  /* Other vivid colors */
+  --yellow: #ffd61e;
+  --cyan: #2ee7e7;
+  --pink: #ff70ff;
+  --violet: #a273f5;
+
+  /* Fonts */
+  --font-title: 'Gilroy', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Text colors */
+  --fg-0: var(--light);
+  --fg-1: var(--lighter-grey);
+  --fg-2: var(--light-grey);
+
+  --bg-0: var(--dark);
+  --bg-1: var(--darker-grey);
+  --bg-2: var(--dark-grey);
+
+  /* Sentiment aliases */
+  --positive: var(--green);
+  --negative: var(--red);
+  --success: var(--green);
+  --failure: var(--red);
+  --error: var(--red);
+  --warning: var(--orange);
+  --info: var(--fg-1);
+  --debug: var(--fg-2);
+
+  /* Layout */
+  --border-radius: .45rem;
+  --border-width: 0.1rem;
+  --border-color: var(--grey);
+
+  /* Typo */
+  --font-size-xs: 0.7rem;
+  --font-size-s: 0.8rem;
+  --font-size-m: 0.85rem;
+  --font-size-ml: 0.95rem;
+  --font-size-l: 1.05rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xxl: 1.50rem;
+  --font-size-xxxl: 1.8rem;
+  --font-size-xxxxl: 2.25rem;
+  --font-size-title: var(--font-size-xxl);
+  --font-size-subtitle: var(--font-size-l);
+
+  /* Z-indexes */
+  --z-index-dropdown: 100;
+  --z-index-modal: 110;
+  --z-index-tooltip: 120;
+  --z-index-toast: 130;
+}

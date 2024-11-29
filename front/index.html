@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="mask-icon" href="/svgs/favicon.svg" color="#477BFF" />
+    <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Blue Bull" />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Bull</title>
+    <meta name="sitename" property="og:site_name" content="Blue Bull" />
+    <meta name="title" property="og:title" content="Blue Bull" />
+    <meta name="type" property="og:type" content="website" />
+    <meta name="locale" property="og:locale" content="en_US" />
+    <meta name="description" property="og:description" content="Yield at scale" />
+    <meta name="author" content="Blue Bull"/>
+    <meta name="copyright" content="Blue Bull"/>
+    <meta name="url" property="og:url" content="https://bluebull.wtf" />
+    <link rel="canonical" href="http://bluebull.wtf/" hreflang="en-us" />
+    <link rel="alternate" href="http://btrsupply.com" hreflang="en-us" />
+    <meta name="robots" content="index, follow, max-snippet:60, max-image-preview:large" />
+  </head>
+  <body>
+    <div id="app" class="bg-black"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <noscript>
+      <strong>Please enable Javascript or update browser to use this app</strong>
+    </noscript>
+    <div style="position: absolute; width: 100%; height: 100%;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <filter id="bgBlur" width="100%" height="100%" x="0" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blurred"/>
+            <feBlend in="SourceGraphic" in2="blurred" mode="normal" />
+          </filter>
+          <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feFlood flood-color="rgb(0,100,255)" flood-opacity="0.7" in="SourceGraphic" />
+            <feComposite operator="in" in2="SourceGraphic" />
+            <feGaussianBlur stdDeviation="2.5" />
+            <feComponentTransfer result="glow1">
+              <feFuncA type="linear" slope="4" intercept="0" />
+            </feComponentTransfer>
+            <feMerge>
+               <feMergeNode in="glow1" />
+               <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <filter id="neonGlowLight" x="-50%" y="-50%" width="200%" height="200%">
+            <feFlood flood-color="rgb(50,150,255)" flood-opacity=".85" in="SourceGraphic" />
+            <feComposite operator="in" in2="SourceGraphic" />
+            <feGaussianBlur stdDeviation="3" />
+            <feComponentTransfer result="glow2">
+              <feFuncA type="linear" slope="4" intercept="0" />
+            </feComponentTransfer>
+            <feMerge>
+               <feMergeNode in="glow2" />
+               <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <filter id="combined-filter" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+            <!-- First apply the background blur -->
+            <feFlood flood-opacity="0" result="bgFix"/>
+            <feGaussianBlur in="bgFix" stdDeviation="12" result="bgBlurred"/>
+            <feComposite in2="SourceAlpha" operator="in" result="bgBlur"/>
+
+            <!-- Then apply the neon glow effect -->
+            <feGaussianBlur in="bgBlur" stdDeviation="2" result="coloredBlur"/>
+            <feFlood flood-color="#228dff" result="glowColor"/>
+            <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlowColored"/>
+
+            <!-- Merge the original source graphic on top of the glow -->
+            <feMerge>
+              <feMergeNode in="softGlowColored"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+  </body>
+</html>
